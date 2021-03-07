@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family={font_name}&display=swap');
+
+:root {
+    --background-color: transparent;
+}
+
+body {
+    margin: 0;
+}
+
+.main-container {
+    font-family: '{font_name}', sans-serif;
+    background-color: var(--background-color);
+    font-size: 16px;
+}

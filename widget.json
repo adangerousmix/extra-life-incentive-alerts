@@ -1,1 +1,7 @@
-{}
+{
+    "font_family": {
+        "label": "Font Family",
+        "type": "googleFont",
+        "value": "Roboto"
+    }
+}
