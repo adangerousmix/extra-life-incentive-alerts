@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family={font_name}&display=swap');
 
 :root {
-    --background-color: transparent;
+    --background-color: white;
 }
 
 body {

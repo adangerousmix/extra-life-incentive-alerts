@@ -3,5 +3,21 @@
         "label": "Font Family",
         "type": "googleFont",
         "value": "Roboto"
+    },
+    "ExtraLifeType": {
+        "group": "Goal",
+        "label": "Extra Life Type",
+        "type": "dropdown",
+        "options": {
+            "participants": "Participant",
+            "teams": "Team"
+        },
+        "value": "participant"
+    },
+    "participantId": {
+        "group": "Goal",
+        "label": "Participant/Team ID",
+        "type": "text",
+        "value": ""
     }
 }
