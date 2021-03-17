@@ -73,7 +73,7 @@ window.addEventListener("onWidgetLoad", async (obj) => {
     playAlert();
     if ("{participantId}" !== "") {
         getDonations();
-        console.log(donations);
+        console.log("Donations: ", donations);
         setTimeout(function () { checkForDonation(); }, 15000);
     }
 });
