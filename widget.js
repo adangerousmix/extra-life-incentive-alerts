@@ -26,7 +26,7 @@ let playAlert = () => {
 };
 
 let sleep = () => {
-    return new Promise(resolve => setTimeout(resolve, 8000));
+    return new Promise(resolve => setTimeout(resolve, 5000));
 };
   
 let arrayColumn = (arr, n) => {
