@@ -1,8 +1,27 @@
 const container = document.getElementsByClassName("main-container")[0];
+const image = document.getElementByID("image");
 
 let donations = [],
     lastDonationDateTime = "",
     audio = new Audio("{alertSound}");
+
+let playAlert = () => {
+    if ({enableAlerts}) {
+        let sound = new Audio("{sound1}");
+        image.src = "{image1}";
+
+
+        alert.classList.add("alert-show");
+        void alert.offsetWidth;
+        alert.classList.remove("alert-hide");
+
+        setTimeout(() => { 
+            alert.classList.add("alert-hide");
+            void alert.offsetWidth;
+            alert.classList.remove("alert-show");
+        }, 8000);
+    }
+};
 
 let sleep = () => {
     return new Promise(resolve => setTimeout(resolve, 8000));
@@ -36,15 +55,8 @@ function checkForDonation() {
             for (let i = 0; i < donos.length; i++) {
                 if (!arrayColumn(donations, "donationID").includes(donos[i].donationID) && donos[i].createdDateUTC >= donations[0].createdDateUTC) {
                     donations.unshift(donos[i]);
-                    donationSum = donationSum + donations[0].amount;
-
-                    if (donationSum >= donationGoal && !goalMet) {
-                        goalComplete.play();
-                        goalMet = true;
-                    }
 
                     let percent = (donationSum / donationGoal) * 100;
-                    updateProgress(percent);
                     playAlert();
                     await sleep();
                 }
@@ -56,7 +68,11 @@ function checkForDonation() {
 }
 
 window.addEventListener("onWidgetLoad", async (obj) => {
-
+    playAlert();
+    if ("{participantId}" !== "") {
+        getDonations();
+        setTimeout(function () { checkForDonation(); }, 15000);
+    }
 });
 
 window.addEventListener("onEventReceived", (obj) => {

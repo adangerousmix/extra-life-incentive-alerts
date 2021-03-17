@@ -12,5 +12,28 @@ body {
     font-family: '{font_name}', sans-serif;
     background-color: var(--background-color);
     font-size: 16px;
+    height: 100%;
+    margin: 0;
+    min-width: 400px;
     padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.alert-show {
+    animation: alert-show 300ms ease-in forwards;
+}
+
+.alert-hide {
+    animation: alert-hide 100ms ease-out forwards;
+}
+
+@keyframes alert-show {
+    0% { width: 0px; padding: 0; visibility: hidden; }
+    100% { width: 400px; visibility: visible; }
+}
+
+@keyframes alert-hide {
+    0% { width: 400px; visibility: visible; }
+    100% { width: 0px; padding: 0; visibility: hidden; }
 }

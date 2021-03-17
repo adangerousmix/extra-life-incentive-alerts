@@ -19,5 +19,18 @@
         "label": "Participant/Team ID",
         "type": "text",
         "value": ""
+    },
+    "enableAlerts": {
+        "label": "Enable Alerts",
+        "type": "checkbox",
+        "value": true
+    },
+    "image1": {
+        "label": "Image 1",
+        "type": "image-input"
+    },
+    "sound1": {
+        "label": "Sound 1",
+        "type": "sound-input"
     }
 }
