@@ -49,6 +49,7 @@ async function getDonations() {
     const response = await fetch("https://extralife.donordrive.com/api/{ExtraLifeType}/{participantId}/donations?limit=10");
     const text = await response.text();
     donations = JSON.parse(text);
+    console.log("Donations: ", donations);
 }
   
 function checkForDonation() {
@@ -73,7 +74,6 @@ window.addEventListener("onWidgetLoad", async (obj) => {
     playAlert();
     if ("{participantId}" !== "") {
         getDonations();
-        console.log("Donations: ", donations);
         setTimeout(function () { checkForDonation(); }, 15000);
     }
 });
