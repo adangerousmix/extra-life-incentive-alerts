@@ -12,7 +12,7 @@
             "participants": "Participant",
             "teams": "Team"
         },
-        "value": "participant"
+        "value": "participants"
     },
     "participantId": {
         "group": "Goal",
