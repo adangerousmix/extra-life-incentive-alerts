@@ -9,6 +9,7 @@ let playAlert = () => {
     if ({enableAlerts}) {
         let sound = new Audio("{sound1}");
         image.src = "{image1}";
+        sound.play();
 
 
         alert.classList.add("alert-show");
