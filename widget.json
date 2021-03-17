@@ -27,10 +27,12 @@
     },
     "image1": {
         "label": "Image 1",
-        "type": "image-input"
+        "type": "image-input",
+        "value": "https://cdn.streamelements.com/uploads/918ef6d2-8923-4996-8b07-aed010099af6.png"
     },
     "sound1": {
         "label": "Sound 1",
-        "type": "sound-input"
+        "type": "sound-input",
+        "value": "https://cdn.streamelements.com/uploads/9608e493-1996-47bc-87c3-4abdb956ad70.wav"
     }
 }
