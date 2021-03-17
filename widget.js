@@ -21,12 +21,12 @@ let playAlert = () => {
             alert.classList.add("alert-hide");
             void alert.offsetWidth;
             alert.classList.remove("alert-show");
-        }, 8000);
+        }, 3000);
     }
 };
 
 let sleep = () => {
-    return new Promise(resolve => setTimeout(resolve, 7000));
+    return new Promise(resolve => setTimeout(resolve, 8000));
 };
   
 let arrayColumn = (arr, n) => {
