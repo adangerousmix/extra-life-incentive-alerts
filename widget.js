@@ -1,5 +1,6 @@
 const container = document.getElementsByClassName("main-container")[0];
 const image = document.getElementById("image");
+const alert = document.getElementsByClassName("alert")[0];
 
 let donations = [],
     lastDonationDateTime = "",
