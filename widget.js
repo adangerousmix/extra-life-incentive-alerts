@@ -21,7 +21,7 @@ let playAlert = () => {
             alert.classList.add("alert-hide");
             void alert.offsetWidth;
             alert.classList.remove("alert-show");
-        }, 8000);
+        }, 4000);
     }
 };
 
