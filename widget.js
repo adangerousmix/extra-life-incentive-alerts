@@ -3,6 +3,7 @@ const image = document.getElementById("image");
 const alert = document.getElementsByClassName("alert")[0];
 
 let donations = [],
+    incentives = [],
     lastDonationDateTime = "",
     audio = new Audio("{alertSound}");
 
@@ -51,6 +52,13 @@ async function getDonations() {
     donations = JSON.parse(text);
     console.log("Donations: ", donations);
 }
+
+async function getIncentives() {
+    const response = await fetch("https://extralife.donordrive.com/api/{ExtraLifeType}/{participantId}/incentives");
+    const text = await response.text();
+    incentives = JSON.parse(text);
+    console.log("Incentives: ", incentives);
+}
   
 function checkForDonation() {
     if ("{participantId}" !== "") {
@@ -73,6 +81,7 @@ function checkForDonation() {
 window.addEventListener("onWidgetLoad", async (obj) => {
     playAlert();
     if ("{participantId}" !== "") {
+        getIncentives();
         getDonations();
         setTimeout(function () { checkForDonation(); }, 15000);
     }

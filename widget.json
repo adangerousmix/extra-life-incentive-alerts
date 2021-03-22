@@ -25,6 +25,11 @@
         "type": "checkbox",
         "value": true
     },
+    "name1": {
+        "label": "Name 1",
+        "type": "text",
+        "value": "Spicy Bean Boozled"
+    },
     "image1": {
         "label": "Image 1",
         "type": "image-input",
