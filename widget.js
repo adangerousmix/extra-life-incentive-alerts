@@ -79,7 +79,6 @@ function checkForDonation() {
 }
 
 window.addEventListener("onWidgetLoad", async (obj) => {
-    playAlert();
     if ("{participantId}" !== "") {
         getIncentives();
         getDonations();
