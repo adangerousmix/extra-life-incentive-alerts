@@ -72,7 +72,6 @@ let checkForDonation = () => {
                 if (!arrayColumn(donations, "donationID").includes(donos[i].donationID) && donos[i].createdDateUTC >= donations[0].createdDateUTC) {
                     donations.unshift(donos[i]);
 
-                    let percent = (donationSum / donationGoal) * 100;
                     if (donos[i].incentiveID) {
                         playAlert(donos[i].incentiveID);
                     }
