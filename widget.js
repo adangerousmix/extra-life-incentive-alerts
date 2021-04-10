@@ -78,7 +78,7 @@ let checkForDonation = () => {
     }
 }
 
-let getSetIncentivesAlerts = () => {
+let setIncentivesAlerts = () => {
     for (i = 0; i < 5; i++) {
         let v = "incentive-" + i + "-name";
         if ({v}) {
@@ -90,8 +90,9 @@ let getSetIncentivesAlerts = () => {
 }
 
 window.addEventListener("onWidgetLoad", async (obj) => {
+    console.log(obj);
     if ("{participantId}" !== "") {
-        getSetIncentivesAlerts();
+        setIncentivesAlerts(obj);
         getIncentives();
         getDonations();
         setTimeout(function () { checkForDonation(); }, 15000);
