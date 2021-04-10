@@ -81,8 +81,8 @@ let checkForDonation = () => {
 let getSetIncentivesAlerts = () => {
     for (i = 0; i < 5; i++) {
         let v = "incentive-" + i + "-name";
-        if ({{v}}) {
-            setIncentives.push({{v}});
+        if ({v}) {
+            setIncentives.push({v});
         }
     }
 
