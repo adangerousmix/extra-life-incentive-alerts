@@ -7,9 +7,10 @@ let donations = [],
     lastDonationDateTime = "",
     setIncentives = [];
 
-let playAlert = () => {
+let playAlert = (incentiveId) => {
     if ({enableAlerts}) {
-        let sound = new Audio("{incentive-1-sound-1}");
+        let rnd = Math.floor(Math.random() * Math.floor(2));
+        let sound = new Audio("{incentive-" + rnd + "-sound-1}");
         // image.src = "{image1}";
         sound.play();
 
@@ -79,10 +80,23 @@ let checkForDonation = () => {
 }
 
 let setIncentivesAlerts = (fields) => {
-    for (i = 0; i < 5; i++) {
-        let v = "incentive-" + i + "-name";
-        if (fields[v]) {
-            setIncentives.push(fields[v]);
+    for (i = 1; i <= 5; i++) {
+        let incentive = "incentive-" + i;
+        if (fields[incentive + "-name"]) {
+            let sounds = [];
+            for (j = 1; j <= 5; j++) {
+                if (fields[incentive + "-sound-" + j]) {
+                    let soundName = "sound-" + j;
+                    sounds.push({
+                        soundName: fields[incentive + "-sound-" + j]
+                    });
+                }
+            }
+
+            setIncentives.push({
+                "name": fields[incentive + "-name"],
+                "sounds": sounds
+            });
         }
     }
 
@@ -95,7 +109,7 @@ window.addEventListener("onWidgetLoad", async (obj) => {
         setIncentivesAlerts(obj.detail.fieldData);
         getIncentives();
         getDonations();
-        playAlert();
+        playAlert("6BDC6058-EF95-6B0C-9588E5794C9153CE");
         setTimeout(function () { checkForDonation(); }, 15000);
     }
 });
