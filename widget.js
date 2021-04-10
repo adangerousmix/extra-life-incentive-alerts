@@ -35,7 +35,7 @@ let playAlert = (incentiveId) => {
 
         let rnd = Math.floor(Math.random() * Math.floor(alert.sounds.length));
         console.log("Rnd:", rnd);
-        let sound = new Audio(alert.sounds[rnd]);
+        let sound = new Audio(alert.sounds[rnd].sound);
         sound.play();
     }
 };
