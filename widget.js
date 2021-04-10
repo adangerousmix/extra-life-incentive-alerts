@@ -86,9 +86,8 @@ let setIncentivesAlerts = (fields) => {
             let sounds = [];
             for (j = 1; j <= 5; j++) {
                 if (fields[incentive + "-sound-" + j]) {
-                    let soundName = "sound-" + j;
                     sounds.push({
-                        [soundName]: fields[incentive + "-sound-" + j]
+                        "sound": fields[incentive + "-sound-" + j]
                     });
                 }
             }
