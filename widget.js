@@ -17,6 +17,8 @@ let playAlert = (incentiveId) => {
             }
         }
 
+        console.log("Incentive:", incentive);
+
         for (j = 0; j < alerts.length; j++) {
             if (alerts[j].name == incentive.description) {
                 alert = alerts[j];
