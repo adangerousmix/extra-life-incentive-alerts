@@ -25,18 +25,18 @@ let playAlert = (incentiveId) => {
 
         console.log("Incentive:", incentive);
 
-        // for (j = 0; j < alerts.length; j++) {
-        //     if (alerts[j].name == incentive.description) {
-        //         alert = alerts[j];
-        //     }
-        // }
+        for (j = 0; j < alerts.length; j++) {
+            if (alerts[j].name == incentive.description) {
+                alert = alerts[j];
+            }
+        }
 
-        // console.log("Alert:", alert);
+        console.log("Alert:", alert);
 
-        // let rnd = Math.floor(Math.random() * Math.floor(alert.sounds.length));
-        // console.log("Rnd:", rnd);
-        // let sound = new Audio(alert.sounds[rnd]);
-        // sound.play();
+        let rnd = Math.floor(Math.random() * Math.floor(alert.sounds.length));
+        console.log("Rnd:", rnd);
+        let sound = new Audio(alert.sounds[rnd]);
+        sound.play();
     }
 };
 
