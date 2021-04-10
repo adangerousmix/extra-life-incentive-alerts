@@ -8,11 +8,13 @@ let donations = [],
     alerts = [];
 
 let playAlert = (incentiveId) => {
+    console.log(incentiveId);
     if ({enableAlerts}) {
         let alert = [];
         let incentive = [];
+
         for (i = 0; i < incentives.length; i++) {
-            console.log(incentives[i].incentiveID, " - ", incentiveId);
+            console.log("Current Incentive:", incentives[i].incentiveID);
             if (incentives[i].incentiveID == incentiveId) {
                 incentive = incentives[i];
             }
