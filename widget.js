@@ -121,6 +121,7 @@ window.addEventListener("onWidgetLoad", async (obj) => {
         getIncentives();
         getDonations();
         setAlerts(obj.detail.fieldData);
+        await sleep();
         setTimeout(playAlert("6BDC6058-EF95-6B0C-9588E5794C9153CE"), 20000);
         setTimeout(function () { checkForDonation(); }, 15000);
     }
