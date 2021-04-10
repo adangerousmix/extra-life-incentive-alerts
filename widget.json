@@ -31,16 +31,10 @@
         "type": "text",
         "value": "Spicy Bean Boozled"
     },
-    "incentive-1-image": {
+    "incentive-1-sound-1": {
         "group": "Incentive 1",
-        "label": "Image",
-        "type": "image-input",
-        "value": "https://cdn.streamelements.com/uploads/918ef6d2-8923-4996-8b07-aed010099af6.png"
-    },
-    "incentive-1-sound": {
-        "group": "Incentive 1",
-        "label": "Sound",
+        "label": "Sound 1",
         "type": "sound-input",
-        "value": "https://cdn.streamelements.com/uploads/9608e493-1996-47bc-87c3-4abdb956ad70.wav"
+        "value": "https://cdn.streamelements.com/uploads/1188d5ea-c20b-47b0-a5c1-cd8fcd3bb5bb.wav"
     }
 }
