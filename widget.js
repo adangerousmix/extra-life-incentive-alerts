@@ -118,9 +118,9 @@ let setAlerts = (fields) => {
 window.addEventListener("onWidgetLoad", async (obj) => {
     console.log(obj);
     if ("{participantId}" !== "") {
-        setAlerts(obj.detail.fieldData);
         getIncentives();
         getDonations();
+        setAlerts(obj.detail.fieldData);
         setTimeout(playAlert("6BDC6058-EF95-6B0C-9588E5794C9153CE"), 10000);
         setTimeout(function () { checkForDonation(); }, 15000);
     }
