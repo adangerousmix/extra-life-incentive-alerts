@@ -5,25 +5,28 @@ const alert = document.getElementsByClassName("alert")[0];
 let donations = [],
     incentives = [],
     lastDonationDateTime = "",
-    setIncentives = [];
+    alerts = [];
 
 let playAlert = (incentiveId) => {
     if ({enableAlerts}) {
-        let rnd = Math.floor(Math.random() * Math.floor(2));
-        let sound = new Audio("{incentive-" + rnd + "-sound-1}");
-        // image.src = "{image1}";
+        let alert = "";
+        let incentive = "";
+        for (i = 0; i < incentives.length; i++) {
+            if (incentives[i].incentiveID == incentiveId) {
+                incentive = incentives[i];
+            }
+        }
+
+        for (j = 0; j < alerts.length; j++) {
+            if (alerts[j].name == incentive.description) {
+                alert = alerts[j];
+            }
+        }
+
+        let rnd = Math.floor(Math.random() * Math.floor(alert.sounds.length));
+        console.log("Rnd:", rnd);
+        let sound = new Audio(alert.sounds[rnd]);
         sound.play();
-
-
-        // alert.classList.add("alert-show");
-        // void alert.offsetWidth;
-        // alert.classList.remove("alert-hide");
-
-        // setTimeout(() => { 
-        //     alert.classList.add("alert-hide");
-        //     void alert.offsetWidth;
-        //     alert.classList.remove("alert-show");
-        // }, 8000);
     }
 };
 
@@ -79,7 +82,7 @@ let checkForDonation = () => {
     }
 }
 
-let setIncentivesAlerts = (fields) => {
+let setAlerts = (fields) => {
     for (i = 1; i <= 5; i++) {
         let incentive = "incentive-" + i;
         if (fields[incentive + "-name"]) {
@@ -92,7 +95,7 @@ let setIncentivesAlerts = (fields) => {
                 }
             }
 
-            setIncentives.push({
+            alerts.push({
                 "name": fields[incentive + "-name"],
                 "sounds": sounds
             });
@@ -105,7 +108,7 @@ let setIncentivesAlerts = (fields) => {
 window.addEventListener("onWidgetLoad", async (obj) => {
     console.log(obj);
     if ("{participantId}" !== "") {
-        setIncentivesAlerts(obj.detail.fieldData);
+        setAlerts(obj.detail.fieldData);
         getIncentives();
         getDonations();
         playAlert("6BDC6058-EF95-6B0C-9588E5794C9153CE");
