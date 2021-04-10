@@ -8,12 +8,9 @@ let donations = [],
     alerts = [];
 
 let playAlert = (incentiveId) => {
-    console.log(incentiveId);
     if ({enableAlerts}) {
         let alert = [];
         let incentive = [];
-
-        console.log("Matching incentives:", incentives);
 
         for (i = 0; i < incentives.length; i++) {
             console.log("Current Incentive:", incentives[i].incentiveID);
@@ -22,18 +19,13 @@ let playAlert = (incentiveId) => {
             }
         }
 
-        console.log("Incentive:", incentive);
-
         for (j = 0; j < alerts.length; j++) {
             if (alerts[j].name == incentive.description) {
                 alert = alerts[j];
             }
         }
 
-        console.log("Alert:", alert);
-
         let rnd = Math.floor(Math.random() * Math.floor(alert.sounds.length));
-        console.log("Rnd:", rnd);
         let sound = new Audio(alert.sounds[rnd].sound);
         sound.play();
     }
@@ -122,20 +114,6 @@ window.addEventListener("onWidgetLoad", async (obj) => {
         getIncentives();
         getDonations();
         setAlerts(obj.detail.fieldData);
-        await sleep(3000);
-        setTimeout(playAlert("6BDC6058-EF95-6B0C-9588E5794C9153CE"), 20000);
         setTimeout(function () { checkForDonation(); }, 15000);
     }
-});
-
-window.addEventListener("onEventReceived", (obj) => {
-    const event = obj.detail.event;
-  
-    if (event.listener === "widget-button" && event.field === "testAlert") {
-        playAlert();
-    }
-});
-
-window.addEventListener("onSessionUpdate", (obj) => {
-
 });
