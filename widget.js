@@ -40,8 +40,8 @@ let playAlert = (incentiveId) => {
     }
 };
 
-let sleep = () => {
-    return new Promise(resolve => setTimeout(resolve, 8000));
+let sleep = (time) => {
+    return new Promise(resolve => setTimeout(resolve, time));
 };
   
 let arrayColumn = (arr, n) => {
@@ -82,8 +82,10 @@ let checkForDonation = () => {
                     donations.unshift(donos[i]);
 
                     let percent = (donationSum / donationGoal) * 100;
-                    playAlert();
-                    await sleep();
+                    if (donos[i].incentiveID) {
+                        playAlert(donos[i].incentiveID);
+                    }
+                    await sleep(8000);
                 }
             }
 
@@ -121,7 +123,7 @@ window.addEventListener("onWidgetLoad", async (obj) => {
         getIncentives();
         getDonations();
         setAlerts(obj.detail.fieldData);
-        await sleep();
+        await sleep(3000);
         setTimeout(playAlert("6BDC6058-EF95-6B0C-9588E5794C9153CE"), 20000);
         setTimeout(function () { checkForDonation(); }, 15000);
     }
