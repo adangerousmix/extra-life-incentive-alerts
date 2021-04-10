@@ -9,8 +9,8 @@ let donations = [],
 
 let playAlert = (incentiveId) => {
     if ({enableAlerts}) {
-        let alert = "";
-        let incentive = "";
+        let alert = [];
+        let incentive = [];
         for (i = 0; i < incentives.length; i++) {
             if (incentives[i].incentiveID == incentiveId) {
                 incentive = incentives[i];
