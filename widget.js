@@ -10,6 +10,7 @@ let donations = [],
 let playAlert = (incentiveId) => {
     console.log(incentiveId);
     if ({enableAlerts}) {
+        console.log("Alerts are enabled.");
         let alert = [];
         let incentive = [];
 
