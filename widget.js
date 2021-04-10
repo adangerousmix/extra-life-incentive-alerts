@@ -78,11 +78,11 @@ let checkForDonation = () => {
     }
 }
 
-let setIncentivesAlerts = () => {
+let setIncentivesAlerts = (fields) => {
     for (i = 0; i < 5; i++) {
         let v = "incentive-" + i + "-name";
-        if ({v}) {
-            setIncentives.push({v});
+        if (fields[v]) {
+            setIncentives.push(fields[v]);
         }
     }
 
@@ -92,7 +92,7 @@ let setIncentivesAlerts = () => {
 window.addEventListener("onWidgetLoad", async (obj) => {
     console.log(obj);
     if ("{participantId}" !== "") {
-        setIncentivesAlerts(obj);
+        setIncentivesAlerts(obj.details.fieldData);
         getIncentives();
         getDonations();
         setTimeout(function () { checkForDonation(); }, 15000);
