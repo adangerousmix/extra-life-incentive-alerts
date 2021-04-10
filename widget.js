@@ -9,20 +9,20 @@ let donations = [],
 
 let playAlert = () => {
     if ({enableAlerts}) {
-        let sound = new Audio("{sound1}");
-        image.src = "{image1}";
+        let sound = new Audio("{incentive-1-sound-1}");
+        // image.src = "{image1}";
         sound.play();
 
 
-        alert.classList.add("alert-show");
-        void alert.offsetWidth;
-        alert.classList.remove("alert-hide");
+        // alert.classList.add("alert-show");
+        // void alert.offsetWidth;
+        // alert.classList.remove("alert-hide");
 
-        setTimeout(() => { 
-            alert.classList.add("alert-hide");
-            void alert.offsetWidth;
-            alert.classList.remove("alert-show");
-        }, 8000);
+        // setTimeout(() => { 
+        //     alert.classList.add("alert-hide");
+        //     void alert.offsetWidth;
+        //     alert.classList.remove("alert-show");
+        // }, 8000);
     }
 };
 
@@ -80,8 +80,8 @@ let checkForDonation = () => {
 
 let getSetIncentivesAlerts = () => {
     for (i = 0; i < 5; i++) {
-        if ("{incentive-1-name}") {
-            setIncentives.push("{incentive-1-name}");
+        if ("{incentive-" + i + "-name}") {
+            setIncentives.push("{incentive-" + i + "-name}");
         }
     }
 
