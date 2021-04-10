@@ -92,7 +92,7 @@ let setIncentivesAlerts = (fields) => {
 window.addEventListener("onWidgetLoad", async (obj) => {
     console.log(obj);
     if ("{participantId}" !== "") {
-        setIncentivesAlerts(obj.details.fieldData);
+        setIncentivesAlerts(obj.detail.fieldData);
         getIncentives();
         getDonations();
         setTimeout(function () { checkForDonation(); }, 15000);
