@@ -12,6 +12,7 @@ let playAlert = (incentiveId) => {
         let alert = [];
         let incentive = [];
         for (i = 0; i < incentives.length; i++) {
+            console.log(incentives[i].incentiveID, " - ", incentiveId);
             if (incentives[i].incentiveID == incentiveId) {
                 incentive = incentives[i];
             }
