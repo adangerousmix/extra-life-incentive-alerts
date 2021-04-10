@@ -102,7 +102,7 @@ let setAlerts = (fields) => {
         }
     }
 
-    console.log("Alerts: ", setIncentives);
+    console.log("Alerts: ", alerts);
 }
 
 window.addEventListener("onWidgetLoad", async (obj) => {
