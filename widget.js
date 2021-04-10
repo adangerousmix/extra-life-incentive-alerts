@@ -5,7 +5,7 @@ const alert = document.getElementsByClassName("alert")[0];
 let donations = [],
     incentives = [],
     lastDonationDateTime = "",
-    audio = new Audio("{alertSound}");
+    setIncentives = [];
 
 let playAlert = () => {
     if ({enableAlerts}) {
@@ -60,7 +60,7 @@ async function getIncentives() {
     console.log("Incentives: ", incentives);
 }
   
-function checkForDonation() {
+let checkForDonation = () => {
     if ("{participantId}" !== "") {
         getLatestDonations().then(async (donos) => {
             for (let i = 0; i < donos.length; i++) {
@@ -78,8 +78,19 @@ function checkForDonation() {
     }
 }
 
+let getSetIncentivesAlerts = () => {
+    for (i = 0; i < 5; i++) {
+        if ({incentive-1-name}) {
+            setIncentives.push({incentive-1-name});
+        }
+    }
+
+    console.log("Alerts: ", setIncentives);
+}
+
 window.addEventListener("onWidgetLoad", async (obj) => {
     if ("{participantId}" !== "") {
+        getSetIncentivesAlerts();
         getIncentives();
         getDonations();
         setTimeout(function () { checkForDonation(); }, 15000);
