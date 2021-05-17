@@ -1,11 +1,6 @@
 {
-    "font_family": {
-        "label": "Font Family",
-        "type": "googleFont",
-        "value": "Roboto"
-    },
     "ExtraLifeType": {
-        "group": "Goal",
+        "group": "Alerts",
         "label": "Extra Life Type",
         "type": "dropdown",
         "options": {
@@ -15,12 +10,12 @@
         "value": "participants"
     },
     "participantId": {
-        "group": "Goal",
+        "group": "Alerts",
         "label": "Participant/Team ID",
-        "type": "text",
-        "value": "449597"
+        "type": "text"
     },
     "enableAlerts": {
+        "group": "Alerts",
         "label": "Enable Alerts",
         "type": "checkbox",
         "value": true
@@ -28,19 +23,276 @@
     "incentive-1-name": {
         "group": "Incentive 1",
         "label": "Name",
-        "type": "text",
-        "value": "Spicy Bean Boozled"
+        "type": "text"
     },
     "incentive-1-sound-1": {
         "group": "Incentive 1",
         "label": "Sound 1",
-        "type": "sound-input",
-        "value": "https://cdn.streamelements.com/uploads/1188d5ea-c20b-47b0-a5c1-cd8fcd3bb5bb.wav"
+        "type": "sound-input"
     },
     "incentive-1-sound-2": {
         "group": "Incentive 1",
         "label": "Sound 2",
-        "type": "sound-input",
-        "value": "https://cdn.streamelements.com/uploads/409a640b-0ac8-405c-a805-bd6430712ae3.wav"
+        "type": "sound-input"
+    },
+    "incentive-1-sound-3": {
+        "group": "Incentive 1",
+        "label": "Sound 3",
+        "type": "sound-input"
+    },
+    "incentive-1-sound-4": {
+        "group": "Incentive 1",
+        "label": "Sound 4",
+        "type": "sound-input"
+    },
+    "incentive-1-sound-5": {
+        "group": "Incentive 1",
+        "label": "Sound 5",
+        "type": "sound-input"
+    },
+    "incentive-1-sound-6": {
+        "group": "Incentive 1",
+        "label": "Sound 6",
+        "type": "sound-input"
+    },
+    "incentive-1-sound-7": {
+        "group": "Incentive 1",
+        "label": "Sound 7",
+        "type": "sound-input"
+    },
+    "incentive-1-sound-8": {
+        "group": "Incentive 1",
+        "label": "Sound 8",
+        "type": "sound-input"
+    },
+    "incentive-1-sound-9": {
+        "group": "Incentive 1",
+        "label": "Sound 9",
+        "type": "sound-input"
+    },
+    "incentive-1-sound-10": {
+        "group": "Incentive 1",
+        "label": "Sound 10",
+        "type": "sound-input"
+    },
+    "incentive-2-name": {
+        "group": "Incentive 2",
+        "label": "Name",
+        "type": "text"
+    },
+    "incentive-2-sound-1": {
+        "group": "Incentive 2",
+        "label": "Sound 1",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-2": {
+        "group": "Incentive 2",
+        "label": "Sound 2",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-3": {
+        "group": "Incentive 2",
+        "label": "Sound 3",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-4": {
+        "group": "Incentive 2",
+        "label": "Sound 4",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-5": {
+        "group": "Incentive 2",
+        "label": "Sound 5",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-6": {
+        "group": "Incentive 2",
+        "label": "Sound 6",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-7": {
+        "group": "Incentive 2",
+        "label": "Sound 7",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-8": {
+        "group": "Incentive 2",
+        "label": "Sound 8",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-9": {
+        "group": "Incentive 2",
+        "label": "Sound 9",
+        "type": "sound-input"
+    },
+    "incentive-2-sound-10": {
+        "group": "Incentive 2",
+        "label": "Sound 10",
+        "type": "sound-input"
+    },
+    "incentive-3-name": {
+        "group": "Incentive 3",
+        "label": "Name",
+        "type": "text"
+    },
+    "incentive-3-sound-1": {
+        "group": "Incentive 3",
+        "label": "Sound 1",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-2": {
+        "group": "Incentive 3",
+        "label": "Sound 2",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-3": {
+        "group": "Incentive 3",
+        "label": "Sound 3",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-4": {
+        "group": "Incentive 3",
+        "label": "Sound 4",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-5": {
+        "group": "Incentive 3",
+        "label": "Sound 5",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-6": {
+        "group": "Incentive 3",
+        "label": "Sound 6",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-7": {
+        "group": "Incentive 3",
+        "label": "Sound 7",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-8": {
+        "group": "Incentive 3",
+        "label": "Sound 8",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-9": {
+        "group": "Incentive 3",
+        "label": "Sound 9",
+        "type": "sound-input"
+    },
+    "incentive-3-sound-10": {
+        "group": "Incentive 3",
+        "label": "Sound 10",
+        "type": "sound-input"
+    },
+    "incentive-4-name": {
+        "group": "Incentive 4",
+        "label": "Name",
+        "type": "text"
+    },
+    "incentive-4-sound-1": {
+        "group": "Incentive 4",
+        "label": "Sound 1",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-2": {
+        "group": "Incentive 4",
+        "label": "Sound 2",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-3": {
+        "group": "Incentive 4",
+        "label": "Sound 3",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-4": {
+        "group": "Incentive 4",
+        "label": "Sound 4",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-5": {
+        "group": "Incentive 4",
+        "label": "Sound 5",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-6": {
+        "group": "Incentive 4",
+        "label": "Sound 6",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-7": {
+        "group": "Incentive 4",
+        "label": "Sound 7",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-8": {
+        "group": "Incentive 4",
+        "label": "Sound 8",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-9": {
+        "group": "Incentive 4",
+        "label": "Sound 9",
+        "type": "sound-input"
+    },
+    "incentive-4-sound-10": {
+        "group": "Incentive 4",
+        "label": "Sound 20",
+        "type": "sound-input"
+    },
+    "incentive-5-name": {
+        "group": "Incentive 5",
+        "label": "Name",
+        "type": "text"
+    },
+    "incentive-5-sound-1": {
+        "group": "Incentive 5",
+        "label": "Sound 1",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-2": {
+        "group": "Incentive 5",
+        "label": "Sound 2",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-3": {
+        "group": "Incentive 5",
+        "label": "Sound 3",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-4": {
+        "group": "Incentive 5",
+        "label": "Sound 4",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-5": {
+        "group": "Incentive 5",
+        "label": "Sound 5",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-6": {
+        "group": "Incentive 5",
+        "label": "Sound 6",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-7": {
+        "group": "Incentive 5",
+        "label": "Sound 7",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-8": {
+        "group": "Incentive 5",
+        "label": "Sound 8",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-9": {
+        "group": "Incentive 5",
+        "label": "Sound 9",
+        "type": "sound-input"
+    },
+    "incentive-5-sound-10": {
+        "group": "Incentive 5",
+        "label": "Sound 10",
+        "type": "sound-input"
     }
 }

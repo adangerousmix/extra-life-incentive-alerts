@@ -5,7 +5,11 @@ const alert = document.getElementsByClassName("alert")[0];
 let donations = [],
     incentives = [],
     lastDonationDateTime = "",
-    alerts = [];
+    alerts = [],
+    lastRand = 0,
+    maxNumIncentives = 5,
+    maxNumSounds = 10,
+    elPing = 15000;
 
 let playAlert = (incentiveId) => {
     if ({enableAlerts}) {
@@ -13,7 +17,6 @@ let playAlert = (incentiveId) => {
         let incentive = [];
 
         for (i = 0; i < incentives.length; i++) {
-            console.log("Current Incentive:", incentives[i].incentiveID);
             if (incentives[i].incentiveID == incentiveId) {
                 incentive = incentives[i];
             }
@@ -25,10 +28,25 @@ let playAlert = (incentiveId) => {
             }
         }
 
-        let rnd = Math.floor(Math.random() * Math.floor(alert.sounds.length));
+        let rnd = randomNumber(alert.sounds.length);
+        console.log("Random: ", rnd);
+      	
         let sound = new Audio(alert.sounds[rnd].sound);
         sound.play();
+        console.log("Sound: ", alert.sounds[rnd].sound);
     }
+};
+
+let randomNumber = (numSounds) => {
+  let newRand = Math.floor(Math.random() * Math.floor(numSounds));
+  
+  if (newRand == lastRand) {
+    newRand = randomNumber(numSounds);
+  }
+  
+  lastRand = newRand;
+  
+  return newRand;
 };
 
 let sleep = (time) => {
@@ -55,7 +73,7 @@ async function getDonations() {
     const response = await fetch("https://extralife.donordrive.com/api/{ExtraLifeType}/{participantId}/donations?limit=10");
     const text = await response.text();
     donations = JSON.parse(text);
-    console.log("Donations: ", donations);
+    // console.log("Donations: ", donations);
 }
 
 async function getIncentives() {
@@ -75,21 +93,21 @@ let checkForDonation = () => {
                     if (donos[i].incentiveID) {
                         playAlert(donos[i].incentiveID);
                     }
-                    await sleep(8000);
+                    await sleep(10000);
                 }
             }
 
-            setTimeout(function () { checkForDonation(); }, 15000);
+            setTimeout(function () { checkForDonation(); }, elPing);
         });
     }
 }
 
 let setAlerts = (fields) => {
-    for (i = 1; i <= 5; i++) {
+    for (i = 1; i <= maxNumIncentives; i++) {
         let incentive = "incentive-" + i;
         if (fields[incentive + "-name"]) {
             let sounds = [];
-            for (j = 1; j <= 5; j++) {
+            for (j = 1; j <= maxNumSounds; j++) {
                 if (fields[incentive + "-sound-" + j]) {
                     sounds.push({
                         "sound": fields[incentive + "-sound-" + j]
@@ -108,11 +126,11 @@ let setAlerts = (fields) => {
 }
 
 window.addEventListener("onWidgetLoad", async (obj) => {
-    console.log(obj);
+    // console.log(obj);
     if ("{participantId}" !== "") {
         getIncentives();
         getDonations();
         setAlerts(obj.detail.fieldData);
-        setTimeout(function () { checkForDonation(); }, 15000);
+        setTimeout(function () { checkForDonation(); }, elPing);
     }
 });
